@@ -1,7 +1,7 @@
 import Home from './views/Home.svelte';
 import Team from './views/TeamViewer.svelte';
 import Info from './views/Info.svelte';
-
+import Overlay from './components/Overlay.svelte';
 let routes = [
     {
         name: '/',
@@ -9,7 +9,13 @@ let routes = [
     },
     {
         name:'/teams',
-        component: Team
+        component: Team,
+        nestedRoutes: [
+            {
+                name: 'new',
+                component: Overlay
+            }
+        ]
     },
     {
         name:'/info',

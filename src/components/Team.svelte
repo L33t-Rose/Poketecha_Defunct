@@ -1,22 +1,14 @@
 <script>
   // import { onMount } from "svelte";
-
   export let data;
   export let index;
+  
   import { store } from "../store";
   import { teamSchema } from "../utils/utils";
 
   console.log($store["teams"][index].mons);
 
-  // let open = false;
-  // let color;
 
-  // onMount(() => {
-  //   color = Math.floor(Math.random() * 16777215)
-  //     .toString(16)
-  //     .padStart(6, 0);
-  //   console.log(index, ": ", color);
-  // });
   function addTeam() {
     if (teamName) {
       let d = teamSchema();

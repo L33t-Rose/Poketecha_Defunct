@@ -16,7 +16,7 @@
     console.log($store);
     localStorage[store.identifier] = JSON.stringify($store);
     console.log("Done saving");
-    console.log(fullWidth);
+    // console.log(fullWidth);
     // console.log('team name:',teamName);
   }
 
