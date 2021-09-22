@@ -2,10 +2,11 @@
   import { onMount } from "svelte";
   let form;
   let clazz = "";
-  export { clazz as class };
+  export {clazz as class};
   export let id = "";
   export let title = "";
   let index = 0;
+  let selector = clazz || 'Form';
   const length = Object.keys($$slots).length;
   console.log($$slots);
 
@@ -88,7 +89,7 @@
   }
 </script>
 
-<div {id} class={`${clazz || ""}`} data-id="customForm">
+<div {id} class={selector} data-id="customForm">
   <h1 class="form-title">
     {title}
   </h1>
