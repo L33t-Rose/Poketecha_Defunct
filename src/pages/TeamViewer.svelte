@@ -1,21 +1,21 @@
 <script>
-  import { store } from "../store";
-  import { teamSchema } from "../utils/utils";
+  import { store } from '../store';
+  import { teamSchema } from '../utils/utils';
 
-  import Team from "../components/Team.svelte";
-  import Toggle from "../components/Toggle.svelte";
-  import Overlay from "../components/Overlay.svelte";
+  import Team from '../components/Team.svelte';
+  import Toggle from '../components/Toggle.svelte';
+  import Overlay from '../components/Overlay.svelte';
 
-  let teamName = "";
+  let teamName = '';
 
   let fullWidth = true;
   let visible = false;
 
   $: {
-    console.log(`The length of teams array is: ${$store["teams"].length}`);
+    console.log(`The length of teams array is: ${$store['teams'].length}`);
     console.log($store);
     localStorage[store.identifier] = JSON.stringify($store);
-    console.log("Done saving");
+    console.log('Done saving');
     // console.log(fullWidth);
     // console.log('team name:',teamName);
   }
@@ -23,18 +23,17 @@
   function addTeam() {
     teamName = teamName.trim();
     if (teamName) {
-      
-      const exists = $store["teams"].every(({ name }, i) => {
+      const exists = $store['teams'].every(({ name }, i) => {
         return name !== teamName;
       });
 
       if (exists) {
         let d = teamSchema();
         d.name = teamName;
-        $store["teams"] = [...$store.teams, d];
-        teamName = "";
+        $store['teams'] = [...$store.teams, d];
+        teamName = '';
       } else {
-        alert("It already exists!!!");
+        alert('It already exists!!!');
       }
     }
   }
@@ -60,7 +59,9 @@
 </Overlay>
 
 <main
-  class="flex justify-center min-h-screen h-auto bg-red-100 yes relative {visible? 'noscroll': ''}"
+  class="flex justify-center min-h-screen h-auto bg-red-100 yes relative {visible
+    ? 'noscroll'
+    : ''}"
 >
   <div class="container mx-auto p-6 space-y-4">
     <div class=" hidden md:block">
@@ -97,27 +98,14 @@
         >
       </div>
 
-      {#each $store["teams"] as i, index}
+      {#each $store['teams'] as i, index}
         <Team data={i} {index} />
       {/each}
     </div>
   </div>
 </main>
 
-<!-- <div class="container mx-auto px-8">
-  <p>Length of Teams Array is {$store['teams'].length}</p>
-
-  <form on:submit|preventDefault={addTeam}>
-    <input type="text" bind:value={teamName} />
-    <button type="submit">Add</button>
-  </form>
-  <div class="">
-    {#each $store['teams'] as i, index}
-      <Team data={i} {index} />
-    {/each}
-  </div>
-</div> -->
-<style>
+<style lang="postcss">
   .smallCard {
     @apply md:w-56 md:h-64;
   }
