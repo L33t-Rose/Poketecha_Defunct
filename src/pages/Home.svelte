@@ -1,6 +1,6 @@
 <script>
   import Modal from '../components/Modal.svelte';
-  import { MultiPageForm as Form } from '../components/MultiPageForm.js';
+  import MultiPageForm from '../components/MultiPageForm.js';
   let text = '';
   let youtube = '';
   let haha = '';
@@ -15,7 +15,7 @@
 
 <h1>Hey Whats UP!</h1>
 <Modal />
-<Form id="kyle" class="space-y-4 bg-red-200" on:submit={handleSubmit}>
+<MultiPageForm id="kyle" class="space-y-4 bg-red-200" on:submit={handleSubmit}>
   <svelte:fragment slot="first">
     <label for="fuck"> Label </label>
     <input type="text" name="fuck" required bind:value={text} />
@@ -36,7 +36,7 @@
     <label for="Haha"> Haha </label>
     <input type="text" name="haha" bind:value={haha} />
   </svelte:fragment>
-</Form>
+</MultiPageForm>
 
 <style lang="postcss">
   :global(.indicator) {

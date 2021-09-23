@@ -1,9 +1,10 @@
 import localStore from './utils/LocalStorageStore';
 
-export const store = localStore({
-    identifier: 'gun',
-    ifNull: {
-        'teams': [],
-    }
-})
+const store = localStore({
+  identifier: 'gun',
+  ifNull: {
+    teams: [],
+  },
+});
 
+export default store;

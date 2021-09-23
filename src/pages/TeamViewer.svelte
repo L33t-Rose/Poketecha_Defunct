@@ -1,6 +1,6 @@
 <script>
-  import { store } from '../store';
-  import { teamSchema } from '../utils/utils';
+  import store from '../store';
+  import teamSchema from '../utils/utils';
 
   import Team from '../components/Team.svelte';
   import Toggle from '../components/Toggle.svelte';
@@ -21,15 +21,17 @@
   }
 
   function addTeam() {
-    teamName = teamName.trim();
+    teamName = teamName.trim().toLowerCase();
     if (teamName) {
       const exists = $store['teams'].every(({ name }, i) => {
         return name !== teamName;
       });
 
       if (exists) {
-        let d = teamSchema();
-        d.name = teamName;
+        let d = {
+          ...teamSchema(),
+          name: teamName,
+        };
         $store['teams'] = [...$store.teams, d];
         teamName = '';
       } else {
@@ -99,7 +101,7 @@
       </div>
 
       {#each $store['teams'] as i, index}
-        <Team data={i} {index} />
+        <Team team={i} />
       {/each}
     </div>
   </div>
