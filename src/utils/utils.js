@@ -5,7 +5,7 @@ const moveSchema = {
   name: '',
   pow: '',
   pp: '',
-  type: '',
+  type: ['', ''],
 };
 
 const monSchema = {
