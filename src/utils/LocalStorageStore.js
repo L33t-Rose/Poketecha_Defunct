@@ -1,27 +1,26 @@
 import { writable } from 'svelte/store';
 
-const alt = {identifier:'',ifNull:{}}
+const alt = { identifier: '', ifNull: {} };
 
 /**
- * 
- * @param {{identifier:String,ifNull:Object}} init 
- * 
+ *
+ * @param {{identifier:String,ifNull:Object}} init
+ *
  */
-export default function localStorageStore(init=alt) {
-    if (typeof init !== "object") {
-        throw 'Object not provided'
-    }
-    
-    let identifier = init['identifier'];
+export default function localStorageStore(init = alt) {
+  if (typeof init !== 'object') {
+    throw 'Object not provided';
+  }
 
-    if (!localStorage[identifier]) {
-        localStorage.setItem(identifier, JSON.stringify(init['ifNull']));
-    }
-        
+  let identifier = init['identifier'];
 
-    const { subscribe, set, update } = writable(JSON.parse(localStorage[identifier]));
-    
+  if (!localStorage[identifier]) {
+    localStorage.setItem(identifier, JSON.stringify(init['ifNull']));
+  }
 
-    return { identifier,subscribe, set, update }
+  const { subscribe, set, update } = writable(
+    JSON.parse(localStorage[identifier])
+  );
 
+  return { identifier, subscribe, set, update };
 }

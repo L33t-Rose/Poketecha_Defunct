@@ -1,35 +1,24 @@
 const moveSchema = {
-    name: '',
-    id: '',
-    pow: '',
-    accuracy: '',
-    type: '',
-    description: '',
-    pp: ''
-}
+  accuracy: '',
+  description: '',
+  id: '',
+  name: '',
+  pow: '',
+  pp: '',
+  type: '',
+};
 
 const monSchema = {
-    name: '',
-    ability: '',
-    moves: [
-        moveSchema,
-        moveSchema,
-        moveSchema,
-        moveSchema
-    ]
-}
+  ability: '',
+  moves: [moveSchema, moveSchema, moveSchema, moveSchema],
+  name: '',
+  pokedexNum: 0,
+};
 
-export const teamSchema = () => {
-    return {
-        name: '',
-        mons: [
-            monSchema,
-            monSchema,
-            monSchema,
-            monSchema,
-            monSchema,
-            monSchema,
-        ]
-    }
-}
+const teamSchema = () => ({
+  isComplete: false,
+  mons: [monSchema, monSchema, monSchema, monSchema, monSchema, monSchema],
+  name: '',
+});
 
+export default teamSchema;
