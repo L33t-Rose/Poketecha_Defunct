@@ -1,6 +1,9 @@
 <script>
+  import store from '../store';
   export let params = {};
-  console.log(params);
+  const { team: index } = params;
+  const teamInfo = $store.teams[index];
+  console.log(teamInfo);
 </script>
 
 <p>
