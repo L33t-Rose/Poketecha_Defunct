@@ -9,13 +9,13 @@ const alt = { identifier: '', ifNull: {} };
  */
 export default function localStorageStore(init = alt) {
   if (typeof init !== 'object') {
-    throw 'Object not provided';
+    throw Error('Object not provided');
   }
 
-  let identifier = init['identifier'];
+  const { identifier } = init;
 
   if (!localStorage[identifier]) {
-    localStorage.setItem(identifier, JSON.stringify(init['ifNull']));
+    localStorage.setItem(identifier, JSON.stringify(init.ifNull));
   }
 
   const { subscribe, set, update } = writable(

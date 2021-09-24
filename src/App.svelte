@@ -1,9 +1,15 @@
 <script>
-  import Router from 'svelte-spa-router';
+  import Router, { replace } from 'svelte-spa-router';
   import routes from './routes';
+
+  function conditionsFailed(event) {
+    console.error('conditionsFailed event', event.detail);
+
+    replace('/teams');
+  }
 </script>
 
-<Router {routes} />
+<Router {routes} on:conditionsFailed={conditionsFailed} />
 
 <style global lang="postcss">
   /* purgecss start ignore */
