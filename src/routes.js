@@ -4,6 +4,7 @@ import { get } from 'svelte/store';
 import Home from './pages/Home.svelte';
 import Team from './pages/TeamViewer.svelte';
 import ViewTeam from './pages/ViewTeam.svelte';
+import Unknown from './pages/404.svelte';
 import store from './store';
 
 const routes = {
@@ -24,6 +25,7 @@ const routes = {
       },
     ],
   }),
+  '/404': Unknown,
 };
 
 export default routes;
