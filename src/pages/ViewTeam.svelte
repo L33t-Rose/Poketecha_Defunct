@@ -1,6 +1,9 @@
 <script>
+  import TeamGrid from '../components/TeamGrid.svelte';
   import { onMount } from 'svelte';
-  import Dark from '../icons/Dark.svelte';
+  import icons from '../icons';
+  // import { Bug, Dark } from '../icons/components';
+  // import Dark from '../icons/Dark.svelte';
 
   import store from '../store';
   export let params = {};
@@ -8,9 +11,12 @@
   const teamInfo = $store.teams[index];
   console.log(teamInfo);
 
+  console.log($icons);
+  console.log(icons.Bug);
   // onMount(async () => {
   //   console.log(await import('../icons/Dragon.svelte'));
   // });
+  const type = 'Dragon';
 </script>
 
 <p>
@@ -20,9 +26,13 @@
   >
 </p>
 <div class="test">
-  <Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark
-  />
+  <!-- <Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark
+  /> -->
 </div>
+<TeamGrid />
+<!-- <svelte:component this={Bug} /> -->
+<!-- <Dark /> -->
+<svelte:component this={$icons[type]} />
 
 <!-- {#await import('../icons/Dark.svelte') then icon}
   <svelte:component this={icon.default} />
