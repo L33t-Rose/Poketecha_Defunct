@@ -1,5 +1,4 @@
 <script>
-  export let name;
   import Router, { replace } from 'svelte-spa-router';
   import routes from './routes';
 
@@ -13,11 +12,8 @@
 <Router {routes} on:conditionsFailed={conditionsFailed} />
 
 <style global lang="postcss">
-  /* purgecss start ignore */
   @tailwind base;
   @tailwind components;
-  /* purgecss end ignore */
-
   @tailwind utilities;
 
   @layer utilities {

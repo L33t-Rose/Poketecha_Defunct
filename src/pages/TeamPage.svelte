@@ -7,14 +7,15 @@
   export let params = {};
   console.log(params);
   const { team: index } = params;
-  const teamInfo = $store.teams[index];
-  console.log('this is the team info', teamInfo);
+  const { name } = $store.teams[index - 1];
+  // console.log('this is the team info', teamInfo);
 
   // console.log($icons);
   // console.log($icons.Bug);
   const type = 'Dragon';
 </script>
 
+<h1 class="capitalize">{name}</h1>
 <p>
   Your name is: <b>{params.first}</b>
   <b>
@@ -30,11 +31,8 @@
       <p>x 1</p>
     </div>
   {/each}
-  <!-- <Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark/> -->
 </div>
 <TeamGrid />
-<!-- <svelte:component this={Bug} /> -->
-<!-- <Dark /> -->
 <svelte:component this={$icons[type]} />
 
 <div class="h-8 w-8 bg-red-700" />

@@ -1,10 +1,7 @@
 <script>
-  import { onMount } from "svelte";
-
-  import { fade } from "svelte/transition";
-  // export let opacity = 0.5;
+  import { fade } from 'svelte/transition';
   export let visible = false;
-  let clazz = "";
+  let clazz = '';
   export { clazz as class };
 
   let elem;

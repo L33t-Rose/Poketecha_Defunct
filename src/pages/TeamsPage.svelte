@@ -101,7 +101,7 @@
       </div>
 
       {#each $store['teams'] as i, index}
-        <Team team={i} {index} />
+        <Team team={i} index={index + 1} />
       {/each}
     </div>
   </div>
