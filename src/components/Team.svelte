@@ -1,6 +1,8 @@
 <script>
+  import { link } from 'svelte-spa-router';
   import TeamGrid from './TeamGrid.svelte';
   export let team;
+  export let index;
 </script>
 
 <div
@@ -8,7 +10,11 @@
 >
   <h1 class="flex-1 font-bold text-2xl text-red-500 ">{team.name}</h1>
   <TeamGrid />
-  <button class="p-2 font-bold text-md text-white bg-red-400 w-36 rounded-md"
-    >View Team</button
+  <a
+    class="p-2 font-bold text-md text-white text-center bg-red-400 w-36 rounded-md"
+    href="/teams/{index}"
+    use:link
   >
+    View Team
+  </a>
 </div>

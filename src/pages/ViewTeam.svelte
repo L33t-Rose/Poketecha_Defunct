@@ -5,25 +5,28 @@
   import icons from '../icons';
 
   export let params = {};
+  console.log(params);
   const { team: index } = params;
   const teamInfo = $store.teams[index];
-  console.log(teamInfo);
+  console.log('this is the team info', teamInfo);
 
-  console.log($icons);
-  console.log($icons.Bug);
+  // console.log($icons);
+  // console.log($icons.Bug);
   const type = 'Dragon';
 </script>
 
 <p>
   Your name is: <b>{params.first}</b>
-  <b
-    >{#if params.last}{params.last}{/if}</b
-  >
+  <b>
+    {#if params.last}
+      {params.last}
+    {/if}
+  </b>
 </p>
-<div class="test pb-2 ">
+<div class="test pb-2 bg-red-100 space-x-1">
   {#each Object.entries($icons) as local, i}
     <div class="inline-block">
-      <svelte:component this={$icons[local]} />
+      <svelte:component this={$icons['Fire']} />
       <p>x 1</p>
     </div>
   {/each}
@@ -33,6 +36,8 @@
 <!-- <svelte:component this={Bug} /> -->
 <!-- <Dark /> -->
 <svelte:component this={$icons[type]} />
+
+<div class="h-8 w-8 bg-red-700" />
 
 <!-- {#await import('../icons/Dark.svelte') then icon}
   <svelte:component this={icon.default} />
