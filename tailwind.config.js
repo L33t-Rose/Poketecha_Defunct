@@ -27,7 +27,11 @@ module.exports = {
   //   },
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ['nunito', 'sans-serif'],
+      },
+    },
   },
   variants: {},
   plugins: [],

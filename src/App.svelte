@@ -16,6 +16,11 @@
   @tailwind components;
   @tailwind utilities;
 
+  @layer base {
+    body {
+      @apply font-nunito;
+    }
+  }
   @layer utilities {
     .red-card {
       @apply flex flex-col mb-6 rounded-md  bg-red-200  p-4;
