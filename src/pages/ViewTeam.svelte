@@ -1,21 +1,16 @@
 <script>
   import TeamGrid from '../components/TeamGrid.svelte';
   import { onMount } from 'svelte';
-  import icons from '../icons';
-  // import { Bug, Dark } from '../icons/components';
-  // import Dark from '../icons/Dark.svelte';
-
   import store from '../store';
+  import icons from '../icons';
+
   export let params = {};
   const { team: index } = params;
   const teamInfo = $store.teams[index];
   console.log(teamInfo);
 
   console.log($icons);
-  console.log(icons.Bug);
-  // onMount(async () => {
-  //   console.log(await import('../icons/Dragon.svelte'));
-  // });
+  console.log($icons.Bug);
   const type = 'Dragon';
 </script>
 
@@ -25,9 +20,14 @@
     >{#if params.last}{params.last}{/if}</b
   >
 </p>
-<div class="test">
-  <!-- <Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark
-  /> -->
+<div class="test pb-2 ">
+  {#each Object.entries($icons) as local, i}
+    <div class="inline-block">
+      <svelte:component this={$icons[local]} />
+      <p>x 1</p>
+    </div>
+  {/each}
+  <!-- <Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark /><Dark/> -->
 </div>
 <TeamGrid />
 <!-- <svelte:component this={Bug} /> -->
@@ -41,9 +41,9 @@
   .test {
     /* width: 4rem; */
     width: max-content;
-    /* max-width: 12rem; */
-    max-width: 100%;
-    height: 4rem;
+    max-width: 12rem;
+    /* max-width: 100%; */
+    /* height: 4rem; */
     white-space: nowrap;
     overflow-y: hidden;
     overflow-x: scroll;
