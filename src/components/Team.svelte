@@ -5,9 +5,7 @@
   export let index;
 </script>
 
-<div
-  class="w-full md:w-56 h-72 md:h-64 md:mr-6 red-card shadow-lg flex flex-col"
->
+<div class="w-60 md:w-56 h-72 md:h-64 md:mr-6 red-card shadow-lg flex flex-col">
   <h1 class="flex-1 font-bold text-2xl text-red-500 ">{team.name}</h1>
   <TeamGrid />
   <a

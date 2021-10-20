@@ -28,6 +28,9 @@ module.exports = {
 
   theme: {
     extend: {
+      colors: {
+        darkred: '#F87171',
+      },
       fontFamily: {
         nunito: ['nunito', 'sans-serif'],
       },
