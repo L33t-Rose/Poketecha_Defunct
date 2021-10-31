@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public -single --host"
+    "start": "sirv public --host -single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.0.0",
@@ -30,7 +30,7 @@
     "tailwindcss": "^2.2.17"
   },
   "dependencies": {
-    "sirv-cli": "^1.0.14",
+    "sirv-cli": "^1.0.0",
     "svelte-spa-router": "^3.2.0"
   }
 }

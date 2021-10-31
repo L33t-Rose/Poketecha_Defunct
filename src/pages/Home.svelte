@@ -1,5 +1,6 @@
 <script>
   import Team from '../components/Team.svelte';
+  import Navbar from '../components/Navbar.svelte';
   import teamSchema from '../utils/utils';
   const tempTeam = teamSchema();
   tempTeam.name = 'Junior Jean';
@@ -47,10 +48,12 @@
           fill="#F87171"
         />
       </svg> -->
-
-<header class="min-h-[50vh]  relative grid place-items-center overflow-hidden">
+<Navbar />
+<header
+  class="min-h-[50vh] overflow-auto mt-16 relative grid place-items-center"
+>
   <div class="absolute inset-0 ">
-    <div class=" w-full bg-darkred h-1/2 md:h-1/4" />
+    <div class=" w-full bg-darkred h-1/2 lg:h-1/4" />
     <svg
       width="1920"
       height="332"
@@ -67,30 +70,25 @@
     </svg>
   </div>
   <div
-    class="container mx-auto px-10 relative z-10 flex flex-col md:flex-row pt-4 md:pt-0 space-y-4 md:space-y-0"
+    class="container mx-auto px-10 lg:px-20 relative z-10 flex flex-col md:flex-row pt-4 md:pt-0 space-y-4 md:space-y-0"
   >
     <div class="flex-1 space-y-2">
       <h1 class="font-bold text-white text-4xl">PokeTecha</h1>
       <p class=" !text-white text-2xl">Search Any Pokemon</p>
       <p class=" !text-white text-2xl">Build Any Team</p>
     </div>
-    <!-- <div class="whitespace-nowrap w-1/2 mr-0">
+    <div
+      class="mr-0 relative flex-1 z-0 grid place-items-center sm:place-items-start"
+    >
+      <div class="relative z-10 mt-3 flex-none">
+        <Team team={tempTeam} />
+      </div>
       <div
-        class="relative inline-block transform translate-y-3 z-10 mt-3 flex-none"
+        class="absolute top-0 left-1/2 translate-x-[calc(-50%+1rem)] sm:-translate-x-0 sm:left-4 z-[1]"
       >
         <Team team={tempTeam} />
       </div>
-      <div class="relative z-0 inline-block transform -translate-x-3/4">
-        <Team team={tempTeam} />
-      </div>
-    </div> -->
-    <div class="mr-0 relative grid place-items-center">
-      <div class="relative inline-block z-10 mt-3 flex-none">
-        <Team team={tempTeam} />
-      </div>
-      <div class="absolute top-0 right-7 md:right-0 md:left-3 z-0 inline-block">
-        <Team team={tempTeam} />
-      </div>
+      <p>Junior</p>
     </div>
     <!-- <div class="z-[3]">
         <Team team={tempTeam} />

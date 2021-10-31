@@ -2,7 +2,7 @@
   import { link } from 'svelte-spa-router';
   import TeamGrid from './TeamGrid.svelte';
   export let team;
-  export let index;
+  export let index = 0;
 </script>
 
 <div class="w-60 md:w-56 h-72 md:h-64 md:mr-6 red-card shadow-lg flex flex-col">
