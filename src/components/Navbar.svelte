@@ -10,16 +10,9 @@
   <!-- logo -->
   <!-- <a href="/"><span>PokeTecha</span></a> -->
   <div class="container mx-auto px-10 lg:px-20 flex">
-    <p class="text-white text-2xl font-bold">Test</p>
-    <ul
-      class="hidden sm:flex flex-1 justify-end items-center space-x-6 font-bold"
-    >
-      <li>Team</li>
-      <li>About</li>
-      <li>Contact</li>
-    </ul>
-    <div class="flex flex-1 justify-end items-center sm:hidden p-2">
-      <button on:click={toggleMenu}>
+    <div class="w-full md:w-auto flex">
+      <p class="text-white text-2xl font-bold flex-1 md:flex-none">Test</p>
+      <button on:click={toggleMenu} class="block sm:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6 text-white"
@@ -34,6 +27,14 @@
         </svg>
       </button>
     </div>
+    <ul
+      class="hidden sm:flex flex-1 justify-end items-center space-x-6 font-bold"
+    >
+      <li>Team</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+    <div class="flex flex-1 justify-end items-center sm:hidden p-2" />
   </div>
   {#if showMenu}
     <ul

@@ -53,7 +53,7 @@
   class="min-h-[50vh] overflow-auto mt-16 relative grid place-items-center"
 >
   <div class="absolute inset-0 ">
-    <div class=" w-full bg-darkred h-1/2 lg:h-1/4" />
+    <div class=" w-full bg-darkred h-1/2 lg:h-20" />
     <svg
       width="1920"
       height="332"
@@ -78,13 +78,13 @@
       <p class=" !text-white text-2xl">Build Any Team</p>
     </div>
     <div
-      class="mr-0 relative flex-1 z-0 grid place-items-center sm:place-items-start"
+      class="mr-0 relative flex-1 z-0 grid place-items-center md:place-items-start"
     >
       <div class="relative z-10 mt-3 flex-none">
         <Team team={tempTeam} />
       </div>
       <div
-        class="absolute top-0 left-1/2 translate-x-[calc(-50%+1rem)] sm:-translate-x-0 sm:left-4 z-[1]"
+        class="absolute top-0 left-1/2 translate-x-[calc(-50%+1rem)] md:-translate-x-0 md:left-4 z-[1]"
       >
         <Team team={tempTeam} />
       </div>
@@ -95,9 +95,39 @@
       </div> -->
   </div>
 </header>
-<section class="min-h-[50vh]">
-  <div class="container mx-auto px-10 ">
-    <p>Balls</p>
+<section class="min-h-[50vh] pb-4 ">
+  <div class="container mx-auto px-10 lg:px-20 ">
+    <h1 class="font-bold text-darkred text-4xl">Balls</h1>
+    <div class="flex flex-wrap flex-col sm:flex-row w-full gap-2 lg:gap-20 ">
+      <div class="bg-darkred flex-1 lg:flex-initial p-4 rounded-md space-y-3">
+        <h3 class="text-white font-semibold text-2xl">Build Any Team</h3>
+        <div class="space-y-1 text-white">
+          <p>Create your dream team with our team builder.</p>
+          <p>Add the pokemon of your choice.</p>
+          <p>Get an overview of your team.</p>
+          <p>Make necessary changes .</p>
+        </div>
+
+        <button
+          class="bg-red-600 hover:bg-red-700 text-white text-lg font-medium px-3 py-2 rounded-md "
+          >View Demo</button
+        >
+      </div>
+      <div class="bg-darkred flex-1 lg:flex-initial p-4 rounded-md space-y-3">
+        <h3 class="text-white font-semibold text-2xl">Search Any Pokemon</h3>
+        <div class="space-y-1 text-white">
+          <p>Search any Pokemon from any generation</p>
+          <p>Add It To Your Team</p>
+          <p>Get An Overview Of A Pokemon</p>
+          <p>Make necessary changes .</p>
+        </div>
+
+        <button
+          class="bg-red-600 hover:bg-red-700 text-white text-lg font-medium px-3 py-2 rounded-md "
+          >View Demo</button
+        >
+      </div>
+    </div>
   </div>
 </section>
 
