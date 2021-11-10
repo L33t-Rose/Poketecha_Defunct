@@ -99,13 +99,13 @@
   <div class="container mx-auto px-10 lg:px-20 ">
     <h1 class="font-bold text-darkred text-4xl">Balls</h1>
     <div class="flex flex-wrap flex-col sm:flex-row w-full gap-2 lg:gap-20 ">
-      <div class="bg-darkred flex-1 lg:flex-initial p-4 rounded-md space-y-3">
+      <div class="bg-darkred flex-1 p-4 rounded-md space-y-3">
         <h3 class="text-white font-semibold text-2xl">Build Any Team</h3>
-        <div class="space-y-1 text-white">
-          <p>Create your dream team with our team builder.</p>
-          <p>Add the pokemon of your choice.</p>
-          <p>Get an overview of your team.</p>
-          <p>Make necessary changes .</p>
+        <div class="space-y-1 text-white text-xl">
+          <p>Create your dream team with our team builder</p>
+          <p>Add the pokemon of your choice</p>
+          <p>Get an overview of your team</p>
+          <p>Make necessary changes</p>
         </div>
 
         <button
@@ -113,13 +113,13 @@
           >View Demo</button
         >
       </div>
-      <div class="bg-darkred flex-1 lg:flex-initial p-4 rounded-md space-y-3">
+      <div class="bg-darkred flex-1 p-4 rounded-md space-y-3">
         <h3 class="text-white font-semibold text-2xl">Search Any Pokemon</h3>
-        <div class="space-y-1 text-white">
+        <div class="space-y-1 text-white text-xl">
           <p>Search any Pokemon from any generation</p>
           <p>Add It To Your Team</p>
           <p>Get An Overview Of A Pokemon</p>
-          <p>Make necessary changes .</p>
+          <p>Make necessary changes</p>
         </div>
 
         <button
