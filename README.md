@@ -1,3 +1,5 @@
+Old failed project.
+
 # PokeTecha Remake
 
 This is a re-remake of a personal project called PokeTecha. In essence, PokeTecha was originally a website I created that would simply just show the moves of a pokemon. It holds a great amount of lvoe in my heart because I created when I was a beginner.
